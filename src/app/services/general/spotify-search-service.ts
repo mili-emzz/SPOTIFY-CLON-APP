@@ -15,7 +15,7 @@ export class SpotifySearchService {
 
   search(query: string): Observable<{ albums: Album[], artists: Artist[] }> {
 
-    const searchUrl = `${environment.API_URL}/search?q=${encodeURIComponent(query)}&type=album,track,artist&limit=20`;
+    const searchUrl = `${environment.API_URL}/search?q=${encodeURIComponent(query)}&type=album,track,artist&limit=10`;
 
     return this.http.get<SpotifySearchResponse>(searchUrl).pipe(
       map(response => {

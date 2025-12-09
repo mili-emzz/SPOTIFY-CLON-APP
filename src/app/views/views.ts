@@ -20,10 +20,6 @@ export class Views implements OnInit {
   currentSong = signal<Track | undefined>(undefined);
   currentCover = signal<Image | undefined>(undefined);
 
-  // Para el reproductor
-  currentPlayableSong = signal<Song | undefined>(undefined);
-  playablePlaylist = signal<Song[]>([]);
-
   constructor(private playerState: PlayerStateService) {
   }
 
