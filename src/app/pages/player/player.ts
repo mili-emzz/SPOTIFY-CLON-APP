@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerStateService } from '../../services/general/player-state.service';
+import { PlayerStateService } from '../../services/general/player-state-service';
 import { Album } from '../../interfaces/album';
 
 @Component({

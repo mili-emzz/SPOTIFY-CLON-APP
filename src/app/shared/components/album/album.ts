@@ -8,13 +8,11 @@ import { Album as AlbumInterface } from '../../../interfaces/album';
   styleUrl: './album.css'
 })
 export class Album {
-  album = input.required<AlbumInterface>();
-
+  album = input.required<AlbumInterface>()
 
   albumSelected = output<AlbumInterface>(); 
 
   onAlbumClick(): void{
-    console.log('Reproduciendo:,', this.album().name);
     this.albumSelected.emit(this.album());
   }
 }

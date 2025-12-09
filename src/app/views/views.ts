@@ -1,5 +1,5 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { PlayerStateService } from '../services/general/player-state.service';
+import { PlayerStateService } from '../services/general/player-state-service';
 import { Album } from '../interfaces/album';
 import { Track } from '../interfaces/track';
 import { Image } from '../interfaces/image';
@@ -39,16 +39,6 @@ export class Views implements OnInit {
     // actualizar canción y playlist
     this.playerState.currentSong$.subscribe(song => {
       this.currentSong.set(song);
-      if (song && this.currentCover()) {
-        // convertir a formato reproducible
-        const playableSong = {
-          name: song.name,
-          artist: song.artists[0]?.name || 'Desconocido',
-          url: song.preview_url || '',
-          cover: this.currentCover()?.url || ''
-        };
-        this.currentPlayableSong.set(playableSong);
-      }
     });
 
     // actualizar portada
@@ -59,14 +49,6 @@ export class Views implements OnInit {
     // actualizar playlist
     this.playerState.playlist$.subscribe(tracks => {
       this.playlist.set(tracks);
-      // convertir canciones a formato reproducible
-      const playableSongs = tracks.map(track => ({
-        name: track.name,
-        artist: track.artists[0]?.name || 'Desconocido',
-        url: track.preview_url || '',
-        cover: this.currentCover()?.url || ''
-      }));
-      this.playablePlaylist.set(playableSongs);
     });
   }
 

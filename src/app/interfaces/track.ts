@@ -3,7 +3,7 @@ export interface Track {
     name: string,
     duration_ms: number,
     href: string,
-    preview_url?: string, //espera un undefined, pero mejor el ? para ahorra
+    preview_url?: string, //espera un undefined, pero mejor el ? para ahorrar
     artists: {   
         id: string;
         name: string;

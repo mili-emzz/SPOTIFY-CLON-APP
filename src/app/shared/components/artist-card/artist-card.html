@@ -1,0 +1,10 @@
+<div class="artist-card">
+  <div class="artist-image">
+    @if (artist().image) {
+      <img [src]="artist().image" [alt]="artist().name">
+    } @else {
+      <div class="no-image">♪</div>
+    }
+  </div>
+  <h4 class="artist-name">{{artist().name}}</h4>
+</div>

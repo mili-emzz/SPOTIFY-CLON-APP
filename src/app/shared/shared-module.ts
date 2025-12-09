@@ -6,6 +6,7 @@ import { AudioController } from './components/audio-controller/audio-controller'
 import { Playlist } from './components/playlist/playlist';
 import { Album } from './components/album/album';
 import { AppRoutingModule } from "src/app/app-routing-module";
+import { ArtistCard } from './components/artist-card/artist-card';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AppRoutingModule } from "src/app/app-routing-module";
     AudioController,
     Album,
     Playlist,
-    SearchBar
+    SearchBar,
+    ArtistCard
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { AppRoutingModule } from "src/app/app-routing-module";
     AudioController,
     Album,
     Playlist,
-    SearchBar
+    SearchBar,
+    ArtistCard
   ]
 })
 export class SharedModule { }
